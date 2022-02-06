@@ -1,5 +1,4 @@
-from tkinter import *
-from tkinter import ttk
+import tkinter as ttk
 
 root = Tk()
 frm = ttk.Frame(root, padding=10)
