@@ -11,7 +11,8 @@ class aplication:
         self.a = ""
         self.num1 = 0
         self.num2 = 0
-        self.ope = ""
+        self.operation = ""
+        self.total = 0
 
     def create_buttons(self):
         self.zero_button = Button(root, text="0", height=2, width=6)
@@ -24,7 +25,7 @@ class aplication:
 
         self.equal_button = Button(root, text="=", height=2, width=6)
         self.equal_button.grid(column=3, row=6)
-
+        self.equal_button["command"] = self.equal
 
         self.one_button = Button(root, text="1", height=2, width=6)
         self.one_button.grid(row=5, column=0)
@@ -40,6 +41,7 @@ class aplication:
 
         self.plus_button = Button(root, text="+", height=2,width=6)
         self.plus_button.grid(row=5, column=3)
+        self.plus_button["command"] = self.plus
 
         self.four_button = Button(root, text="4", height=2, width=6)
         self.four_button.grid(row=4, column=0)
@@ -120,6 +122,31 @@ class aplication:
         self.num1 = 0
         self.num2 = 0
         self.ope = ""
+
+    def plus(self):
+        self.operation = "+"
+        self.a = int(self.a)
+        self.num1 = self.a
+        self.a = str(self.a)
+        self.a = ""
+
+    def equal(self):
+        self.num2 = self.a
+        self.num1 = int(self.num1)
+        self.num2 = int(self.num2)
+        if self.operation == "+":
+            self.total = self.num1 + self.num2
+        elif self.operation == "-":
+            self.total = self.num1 - self.num2
+        elif self.operation == "*":
+            self.total = self.num1 * self.num2
+        elif self.operation == "/":
+            self.total = self.num1 / self.num2
+        self.num1 = str(self.num1)
+        self.num2 = str(self.num2)
+        self.total = str(self.total)
+        print(self.num1 + self.operation + self.num2 + '=' + self.total)
+
 
 aplication()
 root.mainloop()
