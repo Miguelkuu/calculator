@@ -2,6 +2,7 @@ from tkinter import *
 
 
 root = Tk()
+root.title("Calculator")
 root.geometry("208x277")
 root.resizable(False, False)
 
@@ -9,7 +10,6 @@ class aplication:
     def __init__(self):
         self.create_buttons()
         self.labels()
-        self.final_display = ""
         self.a = ""
         self.num1 = 0
         self.num2 = 0
@@ -17,11 +17,11 @@ class aplication:
         self.total = 0
 
     def labels(self):
-        self.display_one = Label(root, height=2, width=3, bg="grey", fg="white")
-        self.display_one.grid(column=0, row=1)
+        self.display_one = Label(root, text="hello", justify="right", height=2, bg="grey", fg="white")
+        self.display_one.grid(column=0, row=1, columnspan=4, sticky="we")
 
         self.display_two = Label(root, height=2, bg="grey", fg="white")
-        self.display_two.grid(column=0, row=0, columnspan=3)
+        self.display_two.grid(column=0, row=0, columnspan=4, sticky="we")
 
     def create_buttons(self):
         self.zero_button = Button(root, text="0", height=2, width=6, bg="grey", fg="white")
@@ -127,6 +127,8 @@ class aplication:
         self.a = self.a + "0"
 
     def add_dot_to_str(self):
+        if "." in self.a:
+            return
         self.a = self.a + "."
 
     def clear_all(self):
@@ -166,6 +168,7 @@ class aplication:
 
     def negative(self):
         if "-" in self.a:
+            self.a.replace("-","")
             return
         self.a = "-" + self.a
 

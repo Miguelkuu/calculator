@@ -6,27 +6,26 @@ while True:
     except ValueError:
         print("That was a invalid number")
 
-while True:
-    ope = input("Enter a operation: ").strip()
-    if ope in ("+", "-", "*", "/"):
-        break
-    print("Invalid operator, Try + - * /")
+oper = input("Enter operator: ")
 
 while True:
     try:
         num2 = float(input("Enter second number: "))
         break
     except ValueError:
-        print("That was an invalid number")
+        print("That was a invalid number")
 
-def calcu():
-    if ope == "+":
+def calcu(oper):
+    if oper == "+":
         print(num1 + num2)
-    elif ope == "-":
+    elif oper == "-":
         print(num1 - num2)
-    elif ope == "/":
+    elif oper == "/":
         print(num1 / num2)
-    elif ope == "*":
+    elif oper == "*":
         print(num1 * num2)
+    else:
+        print("Invalid operator")
+        input("Enter a valid operation: ")
 
-calcu()
+calcu(oper)

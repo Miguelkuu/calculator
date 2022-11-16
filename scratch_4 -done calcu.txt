@@ -10,7 +10,6 @@ while True:
     ope = input("Enter a operation: ").strip()
     if ope in ("+", "-", "*", "/"):
         break
-    print("Invalid operator, Try + - * /")
 
 while True:
     try:
@@ -19,7 +18,7 @@ while True:
     except ValueError:
         print("That was an invalid number")
 
-def calcu():
+def calcu(ope):
     if ope == "+":
         print(num1 + num2)
     elif ope == "-":
@@ -29,4 +28,4 @@ def calcu():
     elif ope == "*":
         print(num1 * num2)
 
-calcu()
+calcu(ope)

@@ -1,0 +1,36 @@
+
+def first(num1):
+    if type(num1) == float:
+        return
+    else:
+        float(input("Enter a valid number: "))
+
+
+num1 = float(input("Enter first number: "))
+first(num1)
+
+def last(num2):
+    if type(num2) == float:
+        return
+    else:
+        float(input("Enter a valid number: "))
+
+
+num2 = float(input("Enter second number: "))
+last(num2)
+
+def calcu(oper):
+    if oper == "+":
+        print (num1 + num2)
+    elif oper == "-":
+        print (num1 - num2)
+    elif oper == "/":
+        print (num1 / num2)
+    elif oper == "*":
+        print (num1 * num2)
+    else:
+        print("Invalid operator")
+        input("Enter a valid operation: ")
+
+oper = input("Enter operation: ")
+calcu(oper)
